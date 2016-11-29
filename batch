@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -J benchmark           # job name
+#SBATCH -o out/latest         # output and error file name (%j expands to jobID)
+#SBATCH -n 1                   # total number of mpi tasks requested
+#SBATCH -p gpudev              # queue (partition) -- normal, development, etc.
+#SBATCH -t 00:01:30            # run time (hh:mm:ss) - 20 seconds
+#SBATCH -A EE-382C-EE361C-Multi
+#SBATCH --mail-user=hector.acosta@gmail.com # replace by your email
+#SBATCH --mail-type=begin  # email me when the job starts
+#SBATCH --mail-type=end    # email me when the job finishes
+
+
+set -x
+time ./dot
